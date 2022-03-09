@@ -3,4 +3,5 @@
     <string name="butcrear">CREAR</string>
     <string name="butleer">LEER</string>
     <string name="butmod">MODIFICAR</string>
+    <string name="txtname">NOMBRE DEL ARCHIVO</string>
 </resources>

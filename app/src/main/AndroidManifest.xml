@@ -25,6 +25,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityMenu"></activity>
+        <activity android:name=".ActivityCreate"></activity>
+        <activity android:name=".ActivityRead"></activity>
     </application>
 
 </manifest>
