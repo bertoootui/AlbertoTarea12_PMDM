@@ -1,5 +1,6 @@
 package com.example.albertotarea12_pmdm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -20,7 +21,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ActivityRead extends AppCompatActivity {
-    FloatingActionButton butback, butread;
+    FloatingActionButton butback, butread, butpath;
     TextView txtread;
     EditText txtname;
     private static String name;
@@ -34,6 +35,48 @@ public class ActivityRead extends AppCompatActivity {
         butback = findViewById(R.id.butbackread);
         txtname = findViewById(R.id.txtname2);
         txtread = findViewById(R.id.txtread);
+        butpath = findViewById(R.id.butpahtread);
+
+
+
+
+
+
+        butpath.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (name.equals("")) {
+                    Toast.makeText(getApplicationContext(), "El campo del nombre del archivo no puede estar vacío", Toast.LENGTH_SHORT).show();
+                } else {
+                    File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/Tarea12PMDM/");
+                    File doc = new File(file + "/" + name + ".txt");
+                    if (!doc.exists()) {
+                        Toast.makeText(getApplicationContext(), "No se puede encontrar el archivo especificado", Toast.LENGTH_SHORT).show();
+                    } else {
+
+
+                        String path = doc.getAbsolutePath();
+                        Toast.makeText(getApplicationContext(),"RUTA ARCHIVO: "+path,Toast.LENGTH_SHORT).show();
+
+
+                    }
+
+                }
+            }
+
+        });
+
+
+
+
+        butback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent t = new Intent(ActivityRead.this,ActivityMenu.class);
+                startActivity(t);
+                finish();
+            }
+        });
 
         butread.setOnClickListener(new View.OnClickListener() {
             @Override

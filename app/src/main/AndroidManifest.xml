@@ -27,6 +27,7 @@
         <activity android:name=".ActivityMenu"></activity>
         <activity android:name=".ActivityCreate"></activity>
         <activity android:name=".ActivityRead"></activity>
+        <activity android:name=".ActivityMod"></activity>
     </application>
 
 </manifest>

@@ -36,6 +36,7 @@ public class ActivityMenu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         butcreate = findViewById(R.id.butcrear);
         butread = findViewById(R.id.butleer);
+        butmod = findViewById(R.id.butmod);
 
         checkpermissions();
         checkmemorystate();
@@ -45,6 +46,16 @@ public class ActivityMenu extends AppCompatActivity {
         {
             name = tname.getStringExtra("name");
         }
+
+
+        butmod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent t = new Intent(ActivityMenu.this,ActivityMod.class);
+                startActivity(t);
+                finish();
+            }
+        });
 
         butcreate.setOnClickListener(new View.OnClickListener() {
             @Override

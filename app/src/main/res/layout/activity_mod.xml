@@ -6,72 +6,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/butpahtmodcreate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="176dp"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        app:backgroundTint="#850B12AC"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_dialog_info" />
-
-    <EditText
-        android:id="@+id/txttext"
-        android:layout_width="372dp"
-        android:layout_height="521dp"
-        android:layout_marginTop="16dp"
-        android:background="#4D606060"
-        android:gravity="top"
-        android:scrollIndicators="top|bottom"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/txtname"
-        android:textColor="#ECEBEB"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txttext" />
-
-    <EditText
-        android:id="@+id/txtname"
-        android:layout_width="211dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="20dp"
-        android:background="#4D606060"
-        android:textColor="#ECEBEB"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/txttext" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/butsave"
-        android:layout_width="57dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        android:scaleType="centerInside"
-        app:backgroundTint="#850B12AC"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_save" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/butback"
+        android:id="@+id/butbackmod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -82,4 +19,79 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
+    <EditText
+        android:id="@+id/txtreadmod"
+        android:layout_width="372dp"
+        android:layout_height="521dp"
+        android:layout_marginTop="16dp"
+        android:background="#4D606060"
+        android:gravity="top"
+        android:scrollIndicators="top|bottom"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtnamemod"
+        android:layout_width="211dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:background="#4D606060"
+        android:textColor="#ECEBEB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/txtreadmod" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/butreadmod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="272dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:backgroundTint="#850B12AC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_input_get" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/txtname"
+        android:textColor="#ECEBEB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtreadmod" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/butsavemod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:backgroundTint="#850B12AC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_save" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/butpahtmod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:backgroundTint="#850B12AC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_dialog_info" />
 </androidx.constraintlayout.widget.ConstraintLayout>

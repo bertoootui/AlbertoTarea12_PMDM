@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
+
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -12,26 +13,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class ActivityCreate extends AppCompatActivity {
-    FloatingActionButton butsave, butback, butpath;
-    EditText txttext, txtname;
+public class ActivityMod extends AppCompatActivity {
+    FloatingActionButton butread, butsave, butback, butpath;
+    EditText txtread, txtname;
     private static String name;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create);
+        setContentView(R.layout.activity_mod);
 
-        butsave = findViewById(R.id.butsave);
-        butback = findViewById(R.id.butback);
-        txtname = findViewById(R.id.txtname);
-        txttext = findViewById(R.id.txttext);
-        butpath = findViewById(R.id.butpahtmodcreate);
+        butread = findViewById(R.id.butreadmod);
+        butsave = findViewById(R.id.butsavemod);
+        butback = findViewById(R.id.butbackmod);
+        txtname = findViewById(R.id.txtnamemod);
+        txtread = findViewById(R.id.txtreadmod);
+        butpath = findViewById(R.id.butpahtmod);
 
 
 
@@ -62,17 +67,18 @@ public class ActivityCreate extends AppCompatActivity {
 
         butback.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent t = new Intent(ActivityCreate.this,ActivityMenu.class);
-                t.putExtra("name",name);
+            public void onClick(View view) {
+                Intent t = new Intent(ActivityMod.this,ActivityMenu.class);
                 startActivity(t);
                 finish();
             }
         });
+
+
         butsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String text = txttext.getText().toString();
+                String text = txtread.getText().toString();
                 name = txtname.getText().toString();
                 if(name.equals(""))
                 {
@@ -102,6 +108,45 @@ public class ActivityCreate extends AppCompatActivity {
                     }
 
                 }//end else
+            }
+        });
+
+
+
+        butread.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = "";
+                name = txtname.getText().toString();
+                if(name.equals(""))
+                {
+                    Toast.makeText(getApplicationContext(),"El campo del nombre del archivo no puede estar vacío",Toast.LENGTH_SHORT).show();
+                }else {
+                    File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS + "/Tarea12PMDM/");
+                    File doc = new File(file + "/" + name + ".txt");
+                    if(!doc.exists())
+                    {
+                        Toast.makeText(getApplicationContext(),"No se puede encontrar el archivo especificado",Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        try {
+                            BufferedReader bf = new BufferedReader(new InputStreamReader(new FileInputStream(doc)));
+                            while((text = bf.readLine()) !=null)
+                            {
+                                txtread.append(text);
+                            }
+                            bf.close();
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+
+
+                }
             }
         });
     }
